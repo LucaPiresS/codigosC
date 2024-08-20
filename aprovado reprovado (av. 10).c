@@ -15,8 +15,8 @@ negativo.*/
 
 int main(void)
 {
-    float nota, total_nota, media;
-    int c, codigo;
+    float nota, nota1, nota2, nota3, media_ponderada;
+    int codigo;
     
     //repetição de alunos
     while (codigo >= 0) {
@@ -26,23 +26,21 @@ int main(void)
         
         //confirma se o código é diferente de 0
         if (codigo >= 0) {
-            c = 0;
-            total_nota = 0;
             //media da nota
-            while (c < 3 ) {
-                printf("    Digite a %dª nota: ", c + 1);
-                scanf("%f", &nota);
-        
-                total_nota += nota;
-                c++;
-            }
-    
-            media = total_nota / c;
+            printf("\nDigite a 1º nota do aluno: ");
+            scanf("%f", &nota1);
+            printf("\nDigite a 2º nota do aluno: ");
+            scanf("%f", &nota2);
+            printf("\nDigite a 3º nota do aluno: ");
+            scanf("%f", &nota3);
+            
+            //media
+            media_ponderada = ((4*nota1) + (3*nota2) + (3*nota3)) / (4+3+3);
         
             //prints
-            printf("\nO aluno de código %d tem média de: %.2f\n", codigo, media);
+            printf("\nO aluno de código %d tem média ponderada de: %.2f\n", codigo, media_ponderada);
             
-            if (media >= 5) {
+            if (media_ponderada >= 5) {
                 printf("\nAPROVADO!!!");
             }
             
